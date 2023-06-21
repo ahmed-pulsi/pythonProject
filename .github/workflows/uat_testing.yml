@@ -1,0 +1,24 @@
+name: Testing Branch Tests
+
+on:
+  pull_request:
+    branches:
+      - testing
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          # Your test commands or scripts
